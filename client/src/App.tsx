@@ -2,37 +2,61 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Layout from "./components/Layout";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { trpc } from "@/lib/trpc";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Engineer from "./pages/Engineer";
+import School from "./pages/School";
+import Arcade from "./pages/Arcade";
+import Governance from "./pages/Governance";
+import Analytics from "./pages/Analytics";
+import Charity from "./pages/Charity";
+import Marketplace from "./pages/Marketplace";
+
+// Fires the owner "new user signup" alert once after auth lands.
+function OnboardTrigger() {
+  const { isAuthenticated } = useAuth();
+  const onboard = trpc.auth.onboard.useMutation();
+  useEffect(() => {
+    if (isAuthenticated) onboard.mutate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated]);
+  return null;
+}
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/engineer" component={Engineer} />
+      <Route path="/school" component={School} />
+      <Route path="/arcade" component={Arcade} />
+      <Route path="/governance" component={Governance} />
+      <Route path="/analytics" component={Analytics} />
+      <Route path="/charity" component={Charity} />
+      <Route path="/marketplace" component={Marketplace} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <OnboardTrigger />
+          <Layout>
+            <Router />
+          </Layout>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
