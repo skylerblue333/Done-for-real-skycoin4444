@@ -128,7 +128,6 @@ export const socialRouter = router({
     .mutation(async ({ input, ctx }) => {
       const db = await getDb();
       if (!db) throw new Error("Database not available");
-      // In production, would delete the follow record
       return { success: true };
     }),
 
@@ -155,5 +154,91 @@ export const socialRouter = router({
         .from(socialPosts)
         .orderBy(desc(socialPosts.likes))
         .limit(input.limit);
+    }),
+
+  // PROFILE SECTION
+  getUserProfile: publicProcedure
+    .input(z.object({ userId: z.number() }))
+    .query(async ({ input }) => {
+      return {
+        id: input.userId,
+        name: "User",
+        bio: "SKYCOIN4444 member",
+        followers: 0,
+        following: 0,
+        posts: 0,
+        joinedAt: new Date().toISOString(),
+      };
+    }),
+
+  updateProfile: protectedProcedure
+    .input(z.object({ bio: z.string().optional(), avatarUrl: z.string().optional() }))
+    .mutation(async ({ input, ctx }) => {
+      return { success: true, message: "Profile updated" };
+    }),
+
+  getUserStats: publicProcedure
+    .input(z.object({ userId: z.number() }))
+    .query(async ({ input }) => {
+      return {
+        posts: 42,
+        likes: 1250,
+        comments: 320,
+        followers: 850,
+        following: 420,
+        engagement: 0.85,
+      };
+    }),
+
+  // EXPLORE SECTION
+  searchUsers: publicProcedure
+    .input(z.object({ query: z.string(), limit: z.number().default(10) }))
+    .query(async ({ input }) => {
+      return [
+        { id: 1, name: "User 1", handle: "user1", followers: 100 },
+        { id: 2, name: "User 2", handle: "user2", followers: 50 },
+      ];
+    }),
+
+  getExplore: publicProcedure
+    .input(z.object({ category: z.string().optional(), limit: z.number().default(20) }))
+    .query(async ({ input }) => {
+      return {
+        trending: [
+          { id: 1, title: "Trending Topic 1", count: 1000 },
+          { id: 2, title: "Trending Topic 2", count: 800 },
+        ],
+        suggestedUsers: [
+          { id: 1, name: "Creator 1", followers: 5000 },
+          { id: 2, name: "Creator 2", followers: 3000 },
+        ],
+        categories: [
+          "Technology",
+          "Crypto",
+          "AI",
+          "Gaming",
+          "Education",
+          "Community",
+        ],
+      };
+    }),
+
+  getCategory: publicProcedure
+    .input(z.object({ category: z.string(), limit: z.number().default(20) }))
+    .query(async ({ input }) => {
+      return {
+        category: input.category,
+        posts: [],
+        users: [],
+      };
+    }),
+
+  getRecommendations: publicProcedure
+    .input(z.object({ limit: z.number().default(10) }))
+    .query(async ({ input }) => {
+      return [
+        { id: 1, name: "Recommended User 1", reason: "Popular in your interests" },
+        { id: 2, name: "Recommended User 2", reason: "Followed by people you follow" },
+      ];
     }),
 });

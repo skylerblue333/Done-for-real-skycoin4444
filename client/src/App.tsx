@@ -18,6 +18,9 @@ import Analytics from "./pages/Analytics";
 import Charity from "./pages/Charity";
 import Marketplace from "./pages/Marketplace";
 import DayTradeRoom from "./pages/DayTradeRoom";
+import EscrowShop from "./pages/EscrowShop";
+import VideoArea from "./pages/VideoArea";
+import SocialMedia from "./pages/SocialMedia";
 import { VoiceNavBar } from "./components/VoiceNavBar";
 
 // Fires the owner "new user signup" alert once after auth lands.
@@ -52,6 +55,9 @@ function Router() {
       <Route path="/charity" component={Charity} />
       <Route path="/marketplace" component={Marketplace} />
       <Route path="/trading" component={DayTradeRoom} />
+      <Route path="/escrow" component={EscrowShop} />
+      <Route path="/videos" component={VideoArea} />
+      <Route path="/social" component={SocialMedia} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

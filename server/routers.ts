@@ -16,6 +16,7 @@ import { videoRouter } from "./routers/video";
 import { socialRouter } from "./routers/social";
 import { agentsRouter } from "./routers/agents";
 import { beginnerRouter } from "./routers/beginner";
+import { hopeaiAdvancedRouter } from "./routers/hopeai-advanced";
 import { uploadsRouter } from "./routers/uploads";
 import { seedRouter } from "./routers/seed";
 
@@ -56,6 +57,7 @@ export const appRouter = router({
   social: socialRouter,
   agents: agentsRouter,
   beginner: beginnerRouter,
+  hopeaiAdvanced: hopeaiAdvancedRouter,
   uploads: uploadsRouter,
   seed: seedRouter,
 });
