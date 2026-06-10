@@ -64,20 +64,24 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* LIVE STATS */}
+          {/* TRUTH MODE STATS */}
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {[
               { icon: Sparkles, accent: "cyan" as Accent, label: "Platform Features", value: 22680, fmt: (n: number) => `${n.toLocaleString()}` },
-              { icon: Users, accent: "purple" as Accent, label: "Community Users", value: 1000000, fmt: (n: number) => `${(n / 1_000_000).toFixed(1)}M+` },
-              { icon: TrendingUp, accent: "green" as Accent, label: "Software Value", value: 30000, fmt: (n: number) => `$${(n / 1000).toFixed(0)}K+` },
+              { icon: Users, accent: "purple" as Accent, label: "Active Users", value: 0, fmt: (n: number) => n === 0 ? "Coming Soon" : `${n}` },
+              { icon: TrendingUp, accent: "green" as Accent, label: "Investment Value", value: 30000, fmt: (n: number) => `$${(n / 1000).toFixed(0)}K` },
             ].map(s => (
               <Card key={s.label} className="p-6 text-left" hover>
                 <IconTile icon={s.icon} accent={s.accent} />
                 <div className="mt-4 font-extrabold text-3xl lg:text-4xl">
-                  <AnimatedCounter value={s.value} format={s.fmt} />
+                  {s.label === "Active Users" ? (
+                    <span className="text-lg text-muted-foreground">Coming Soon</span>
+                  ) : (
+                    <AnimatedCounter value={s.value} format={s.fmt} />
+                  )}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-                {s.label === "Software Value" && (
+                {s.label === "Investment Value" && (
                   <div className="mt-2 inline-block px-2 py-1 bg-[var(--neon-cyan)]/20 text-[var(--neon-cyan)] text-xs font-semibold rounded">
                     9.9/10 Rarity
                   </div>
@@ -136,9 +140,9 @@ export default function Home() {
                 <h3 className="font-bold text-xl mb-6">Platform Achievements</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Lightning, label: "70 Versions", value: "v1-v70" },
+                    { icon: Lightning, label: "Versions", value: "70 (v1-v70)" },
                     { icon: Gem, label: "Features", value: "22,680+" },
-                    { icon: Target, label: "Repos", value: "6 Synced" },
+                    { icon: Target, label: "Repositories", value: "6 Synced" },
                     { icon: Sparkles, label: "Voice Commands", value: "444+" },
                     { icon: Zap, label: "AI Agents", value: "4 Active" },
                     { icon: Crown, label: "Status", value: "Live & Ready" },
@@ -172,6 +176,10 @@ export default function Home() {
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     <span>Voice Commands: <strong>OPERATIONAL</strong></span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm border-t border-border pt-3 mt-3">
+                    <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                    <span>Community Users: <strong>LAUNCHING SOON</strong></span>
                   </div>
                 </div>
               </Card>
@@ -215,7 +223,7 @@ export default function Home() {
         <Card className="p-12 text-center">
           <h2 className="font-extrabold text-3xl lg:text-5xl">Ready to Get Started?</h2>
           <p className="text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
-            Join the community building the future on SKYCOIN4444.
+            Join the community building the future on SKYCOIN4444. Be part of something extraordinary.
           </p>
           <Link
             href="/dashboard"
