@@ -8,6 +8,8 @@ import {
   charityCampaigns, donations,
   products, transactions,
   analyticsEvents,
+  cryptoWallets, miningOperations, stakingPositions, burningEvents, swapOrders, priceFeeds, cryptoTransactions, tokenSupply, miningDifficulty,
+  CRYPTO_TOKENS,
 } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 

@@ -29,6 +29,7 @@ import { freeTierRouter } from "./routers/free-tier";
 import { notificationsRouter } from "./routers/notifications";
 import { codeQualityRouter } from "./routers/code-quality";
 import { advancedSearchRouter } from "./routers/advanced-search";
+import { cryptoRouter } from "./routers/crypto";
 
 export const appRouter = router({
   system: systemRouter,
@@ -78,6 +79,7 @@ export const appRouter = router({
   notifications: notificationsRouter,
   codeQuality: codeQualityRouter,
   search: advancedSearchRouter,
+  crypto: cryptoRouter,
   seed: seedRouter,
 });
 

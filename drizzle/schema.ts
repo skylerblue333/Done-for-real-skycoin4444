@@ -277,3 +277,130 @@ export type EscrowListing = typeof escrowListings.$inferSelect;
 export type EscrowTransaction = typeof escrowTransactions.$inferSelect;
 export type VideoContent = typeof videoContent.$inferSelect;
 export type SocialPost = typeof socialPosts.$inferSelect;
+
+/* ===================== CRYPTO SYSTEM ===================== */
+
+// Supported tokens
+export const CRYPTO_TOKENS = ["SKY444", "DODGE", "TRUMP", "BTC", "USDT", "MONERO"] as const;
+export type CryptoToken = typeof CRYPTO_TOKENS[number];
+
+// User wallets for each token
+export const cryptoWallets = mysqlTable("cryptoWallets", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  balance: double("balance").default(0).notNull(),
+  stakedBalance: double("stakedBalance").default(0).notNull(),
+  totalMined: double("totalMined").default(0).notNull(),
+  totalBurned: double("totalBurned").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+// Mining operations
+export const miningOperations = mysqlTable("miningOperations", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  difficulty: double("difficulty").notNull(),
+  hashRate: double("hashRate").notNull(), // hashes per second
+  rewardAmount: double("rewardAmount").notNull(),
+  status: mysqlEnum("status", ["active", "completed", "failed"]).default("active").notNull(),
+  startedAt: timestamp("startedAt").defaultNow().notNull(),
+  completedAt: timestamp("completedAt"),
+});
+
+// Staking positions
+export const stakingPositions = mysqlTable("stakingPositions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  amount: double("amount").notNull(),
+  apy: double("apy").notNull(), // Annual Percentage Yield
+  lockPeriodDays: int("lockPeriodDays").notNull(),
+  rewardsClaimed: double("rewardsClaimed").default(0).notNull(),
+  status: mysqlEnum("status", ["active", "completed", "unstaked"]).default("active").notNull(),
+  startedAt: timestamp("startedAt").defaultNow().notNull(),
+  unlocksAt: timestamp("unlocksAt").notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+// Burning events
+export const burningEvents = mysqlTable("burningEvents", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  amount: double("amount").notNull(),
+  reason: varchar("reason", { length: 255 }), // "manual", "fee", "penalty"
+  supplyReduction: double("supplyReduction").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+// DEX swap orders
+export const swapOrders = mysqlTable("swapOrders", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  fromToken: mysqlEnum("fromToken", CRYPTO_TOKENS).notNull(),
+  toToken: mysqlEnum("toToken", CRYPTO_TOKENS).notNull(),
+  fromAmount: double("fromAmount").notNull(),
+  toAmount: double("toAmount").notNull(),
+  exchangeRate: double("exchangeRate").notNull(),
+  slippage: double("slippage").default(0).notNull(),
+  status: mysqlEnum("status", ["pending", "completed", "failed", "cancelled"]).default("pending").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  completedAt: timestamp("completedAt"),
+});
+
+// Price feeds for each token
+export const priceFeeds = mysqlTable("priceFeeds", {
+  id: int("id").autoincrement().primaryKey(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  priceUsd: double("priceUsd").notNull(),
+  priceChange24h: double("priceChange24h").notNull(),
+  marketCap: double("marketCap"),
+  volume24h: double("volume24h"),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+// Mining difficulty tracker
+export const miningDifficulty = mysqlTable("miningDifficulty", {
+  id: int("id").autoincrement().primaryKey(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  currentDifficulty: double("currentDifficulty").notNull(),
+  targetDifficulty: double("targetDifficulty").notNull(),
+  adjustmentFactor: double("adjustmentFactor").default(1).notNull(),
+  lastAdjustedAt: timestamp("lastAdjustedAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+// Transaction history
+export const cryptoTransactions = mysqlTable("cryptoTransactions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  type: mysqlEnum("type", ["mining", "staking_reward", "swap", "burn", "transfer", "receive"]).notNull(),
+  amount: double("amount").notNull(),
+  relatedId: int("relatedId"), // ID of mining/staking/swap operation
+  description: varchar("description", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+// Global token supply tracker
+export const tokenSupply = mysqlTable("tokenSupply", {
+  id: int("id").autoincrement().primaryKey(),
+  token: mysqlEnum("token", CRYPTO_TOKENS).notNull(),
+  totalSupply: double("totalSupply").notNull(),
+  circulatingSupply: double("circulatingSupply").notNull(),
+  burnedSupply: double("burnedSupply").default(0).notNull(),
+  stakedSupply: double("stakedSupply").default(0).notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CryptoWallet = typeof cryptoWallets.$inferSelect;
+export type MiningOperation = typeof miningOperations.$inferSelect;
+export type StakingPosition = typeof stakingPositions.$inferSelect;
+export type BurningEvent = typeof burningEvents.$inferSelect;
+export type SwapOrder = typeof swapOrders.$inferSelect;
+export type PriceFeed = typeof priceFeeds.$inferSelect;
+export type CryptoTransaction = typeof cryptoTransactions.$inferSelect;
+export type TokenSupply = typeof tokenSupply.$inferSelect;

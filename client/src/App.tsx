@@ -27,6 +27,7 @@ import NotificationsHub from "./pages/NotificationsHub";
 import CodeQualityDashboard from "./pages/CodeQualityDashboard";
 import Onboarding from "./pages/Onboarding";
 import Search from "./pages/Search";
+import Crypto from "./pages/Crypto";
 import { VoiceNavBar } from "./components/VoiceNavBar";
 
 // Fires the owner "new user signup" alert once after auth lands.
@@ -70,6 +71,7 @@ function Router() {
       <Route path="/code-quality" component={CodeQualityDashboard} />
       <Route path="/onboarding" component={Onboarding} />
       <Route path="/search" component={Search} />
+      <Route path="/crypto" component={Crypto} />
       <Route path="*" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
