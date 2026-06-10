@@ -72,12 +72,14 @@
 - [x] GitHub Push: Push to all repos, verify commits
 
 ## Phase 8 — Premium Features Free + GitHub Push (30-min Sprint)
-- [ ] Remove all paywalls and unlock premium features (free will upgrade)
-- [ ] Security scan: Check for malicious/deleted files
-- [ ] Push to main branch with verified commits
+- [x] Remove all paywalls and unlock premium features (free will upgrade)
+- [x] Security scan: Check for malicious/deleted files (clean, no issues)
+- [x] Push to main branch with verified commits (3 commits pushed)
 - [ ] Push all repos to user's GitHub account
-- [ ] Auto-update live demo with latest code
+- [x] Auto-update live demo with latest code (live at skycoin4444-izajymrg.manus.space)
 - [ ] Create Escrow Shop frontend page
 - [ ] Create Video streaming frontend page
 - [ ] Create Social Media frontend page
+- [x] Add Voice Navigation (13 commands, real-time transcript)
+- [x] Add Beginner Learning Path (8-step guided tour)
 - [ ] Final checkpoint and live deployment
