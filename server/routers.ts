@@ -11,6 +11,7 @@ import { charityRouter } from "./routers/charity";
 import { marketplaceRouter } from "./routers/marketplace";
 import { analyticsRouter } from "./routers/analytics";
 import { tradingRouter } from "./routers/trading";
+import { escrowRouter } from "./routers/escrow";
 import { uploadsRouter } from "./routers/uploads";
 import { seedRouter } from "./routers/seed";
 
@@ -46,6 +47,7 @@ export const appRouter = router({
   marketplace: marketplaceRouter,
   analytics: analyticsRouter,
   trading: tradingRouter,
+  escrow: escrowRouter,
   uploads: uploadsRouter,
   seed: seedRouter,
 });
