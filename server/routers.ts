@@ -21,6 +21,7 @@ import { featuresExpansionRouter } from "./routers/features-expansion";
 import { megaFeaturesRouter } from "./routers/mega-features";
 import { rulesEngineRouter } from "./routers/rules-engine";
 import { integrationsRouter } from "./routers/integrations";
+import { marketplaceAdvancedRouter } from "./routers/marketplace-advanced";
 import { uploadsRouter } from "./routers/uploads";
 import { seedRouter } from "./routers/seed";
 
@@ -66,6 +67,7 @@ export const appRouter = router({
   mega: megaFeaturesRouter,
   rules: rulesEngineRouter,
   integrations: integrationsRouter,
+  marketplaceAdv: marketplaceAdvancedRouter,
   uploads: uploadsRouter,
   seed: seedRouter,
 });
