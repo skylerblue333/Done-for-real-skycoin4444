@@ -626,5 +626,69 @@ export const collaborativeSessions = mysqlTable('collaborative_sessions', {
   endedAt: timestamp('ended_at'),
   status: varchar('status', { length: 20 }).default('active'),
 });
+});
 
-// Marketplace tables already defined above
+// Phase 20 — Referral Tournaments Tables
+export const referralTournaments = mysqlTable('referral_tournaments', {
+  id: bigint('id', { mode: 'bigint' }).primaryKey().autoincrement(),
+  name: varchar('name', { length: 255 }).notNull(),
+  description: text('description'),
+  startDate: datetime('start_date').notNull(),
+  endDate: datetime('end_date').notNull(),
+  prizePool: decimal('prize_pool', { precision: 18, scale: 8 }).notNull(),
+  prizeToken: varchar('prize_token', { length: 50 }).default('SKY444'),
+  status: varchar('status', { length: 20 }).default('active'),
+  creatorId: bigint('creator_id', { mode: 'bigint' }).notNull(),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const referralTournamentScores = mysqlTable('referral_tournament_scores', {
+  id: bigint('id', { mode: 'bigint' }).primaryKey().autoincrement(),
+  tournamentId: bigint('tournament_id', { mode: 'bigint' }).notNull(),
+  userId: bigint('user_id', { mode: 'bigint' }).notNull(),
+  referrals: int('referrals').default(0),
+  conversions: int('conversions').default(0),
+  score: int('score').default(0),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+// Phase 20 — NFT Marketplace Tables
+export const nftListings = mysqlTable('nft_listings', {
+  id: bigint('id', { mode: 'bigint' }).primaryKey().autoincrement(),
+  creatorId: bigint('creator_id', { mode: 'bigint' }).notNull(),
+  ownerId: bigint('owner_id', { mode: 'bigint' }).notNull(),
+  name: varchar('name', { length: 255 }).notNull(),
+  description: text('description'),
+  imageUrl: varchar('image_url', { length: 500 }),
+  rarity: varchar('rarity', { length: 20 }).default('common'),
+  attributes: json('attributes'),
+  price: decimal('price', { precision: 18, scale: 8 }),
+  currency: varchar('currency', { length: 50 }).default('SKY444'),
+  status: varchar('status', { length: 20 }).default('owned'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const nftAuctions = mysqlTable('nft_auctions', {
+  id: bigint('id', { mode: 'bigint' }).primaryKey().autoincrement(),
+  nftId: bigint('nft_id', { mode: 'bigint' }).notNull(),
+  creatorId: bigint('creator_id', { mode: 'bigint' }).notNull(),
+  startPrice: decimal('start_price', { precision: 18, scale: 8 }).notNull(),
+  currentBid: decimal('current_bid', { precision: 18, scale: 8 }).notNull(),
+  highestBidderId: bigint('highest_bidder_id', { mode: 'bigint' }),
+  endDate: datetime('end_date').notNull(),
+  currency: varchar('currency', { length: 50 }).default('SKY444'),
+  status: varchar('status', { length: 20 }).default('active'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export const nftTransactions = mysqlTable('nft_transactions', {
+  id: bigint('id', { mode: 'bigint' }).primaryKey().autoincrement(),
+  nftId: bigint('nft_id', { mode: 'bigint' }).notNull(),
+  fromUserId: bigint('from_user_id', { mode: 'bigint' }).notNull(),
+  toUserId: bigint('to_user_id', { mode: 'bigint' }).notNull(),
+  price: decimal('price', { precision: 18, scale: 8 }),
+  currency: varchar('currency', { length: 50 }).default('SKY444'),
+  transactionType: varchar('transaction_type', { length: 20 }).default('sale'),
+  transactionHash: varchar('transaction_hash', { length: 255 }),
+  createdAt: timestamp('created_at').defaultNow(),
+});
