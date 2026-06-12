@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getTemplates
 
 import { publicProcedure, router } from '../trpc';

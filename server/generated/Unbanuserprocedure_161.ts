@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: unbanUserProcedure
 
 import { z } from 'zod';

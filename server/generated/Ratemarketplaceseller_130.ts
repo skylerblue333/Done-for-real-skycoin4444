@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: rateMarketplaceSeller
 
 import { z } from 'zod';

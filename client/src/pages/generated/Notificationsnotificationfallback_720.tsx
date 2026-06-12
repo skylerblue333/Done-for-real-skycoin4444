@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React from 'react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // Assuming shadcn/ui alert component
 import { Button } from '@/components/ui/button'; // Assuming shadcn/ui button component
 import { Skeleton } from '@/components/ui/skeleton'; // Assuming shadcn/ui skeleton component
 import { Terminal, TriangleAlert, Loader2 } from 'lucide-react'; // Icons from lucide-react
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

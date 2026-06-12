@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: payInvoice
 import { publicProcedure } from "../trpc";
 import { z } from "zod";

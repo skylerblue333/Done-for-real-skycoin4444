@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateRule
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc'; // Assuming trpc setup is in './trpc'

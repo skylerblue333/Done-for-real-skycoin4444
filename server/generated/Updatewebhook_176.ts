@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateWebhook
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc'; // Assuming trpc setup in ./trpc

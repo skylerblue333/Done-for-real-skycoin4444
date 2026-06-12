@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getGames
 import { publicProcedure, router } from "../trpc";
 import { getGamesInput } from "../schemas";

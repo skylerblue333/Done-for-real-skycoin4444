@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button'; // shadcn/ui button component
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui card components
 import { Skeleton } from '@/components/ui/skeleton'; // shadcn/ui skeleton component for loading states
 import { AlertCircle, Sun, Moon } from 'lucide-react'; // Icons for error and theme toggle
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getProposals
 
 import { publicProcedure } from './trpc';

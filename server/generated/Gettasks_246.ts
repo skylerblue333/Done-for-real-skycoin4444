@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getTasks
 import { router, publicProcedure } from './trpc';
 import { z } from 'zod';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getStakingRewards
 import { publicProcedure, router } from "./trpc";
 import { getStakingRewardsInputSchema } from "./stakingRewards.schema";

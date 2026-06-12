@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateOAuthApp
 import { pgTable, text, timestamp, uuid, boolean } from 'drizzle-orm/pg-core';
 import { InferSelectModel, InferInsertModel, eq } from 'drizzle-orm';

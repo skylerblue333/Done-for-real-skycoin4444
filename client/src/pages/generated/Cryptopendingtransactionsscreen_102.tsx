@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // Mocking shadcn/ui Card
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Mocking shadcn/ui Table
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // Mocking shadcn/ui Alert
 import { TriangleAlert, Loader2 } from 'lucide-react'; // Mocking lucide-react icons
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

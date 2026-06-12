@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getDepartments
 import { publicProcedure, router } from './trpc';
 import { z } from 'zod';

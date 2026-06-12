@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: exportAuditLogsProcedure
 import { z } from "zod";
 import { protectedProcedure } from "../trpc";

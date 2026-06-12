@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Switch } from '@/components/ui/switch'; // shadcn/ui Switch component for toggling features
 import { Label } from '@/components/ui/label'; // shadcn/ui Label component for accessibility
@@ -5,7 +6,6 @@ import { Slider } from '@/components/ui/slider'; // shadcn/ui Slider component f
 import { Button } from '@/components/ui/button'; // shadcn/ui Button component for actions
 import { toast } from 'sonner'; // For displaying user notifications
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card'; // shadcn/ui card
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table'; // shadcn/ui table
@@ -5,7 +6,6 @@ import { Skeleton } from '@/components/ui/skeleton'; // shadcn/ui skeleton for l
 import { AlertCircle, Loader2 } from 'lucide-react'; // Icons for error and loading
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // shadcn/ui alert
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

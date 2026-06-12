@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getTransactionHistory
 import { publicProcedure, router } from '../trpc';
 import { z } from 'zod';

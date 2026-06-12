@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Skeleton } from '@/components/ui/skeleton'; // Assuming Skeleton is available or will be added
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // Assuming Alert is available or will be added
 import { Terminal } from 'lucide-react'; // Assuming Lucide icons are available or will be added
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

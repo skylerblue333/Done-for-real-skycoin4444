@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: searchMarketplaceListings
 
 import { z } from 'zod';

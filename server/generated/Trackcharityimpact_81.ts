@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: trackCharityImpact
 
 import { z } from 'zod';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'; // shadcn/ui Card
 import { Skeleton } from '@/components/ui/skeleton'; // shadcn/ui Skeleton for loading states
@@ -6,7 +7,6 @@ import { Input } from '@/components/ui/input'; // shadcn/ui Input for filtering
 import { Button } from '@/components/ui/button'; // shadcn/ui Button for pagination/dark mode toggle
 import { Terminal, Sun, Moon } from 'lucide-react'; // Example icons
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

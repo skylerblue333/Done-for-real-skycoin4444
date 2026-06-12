@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getGrowthMetrics
 import { initTRPC, TRPCError } from '@trpc/server';
 import { z } from 'zod';

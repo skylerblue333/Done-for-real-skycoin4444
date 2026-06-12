@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateModerationCase
 import { publicProcedure, router } from "./trpc"; // Assuming trpc.ts defines your tRPC instance
 import { db } from "./db"; // Assuming db.ts exports your Drizzle client

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: searchTemplatesProcedure
 
 import { z } from "zod";

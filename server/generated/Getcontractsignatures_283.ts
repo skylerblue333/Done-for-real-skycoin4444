@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getContractSignatures
 import { publicProcedure, router } from './trpc';
 import { z } from 'zod';

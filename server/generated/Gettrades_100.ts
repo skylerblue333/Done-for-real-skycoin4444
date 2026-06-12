@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getTrades
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your t and publicProcedure

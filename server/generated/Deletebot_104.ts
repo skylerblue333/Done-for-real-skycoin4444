@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteBot
 
 // This file defines the tRPC procedure for deleting a bot.

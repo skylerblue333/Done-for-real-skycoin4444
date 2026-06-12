@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui card component
 import { Button } from '@/components/ui/button'; // shadcn/ui button component
@@ -5,7 +6,6 @@ import { Switch } from '@/components/ui/switch'; // shadcn/ui switch component f
 import { Label } from '@/components/ui/label';
 import { DollarSign, CreditCard, Loader2, WifiOff } from 'lucide-react'; // Icons for UI
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

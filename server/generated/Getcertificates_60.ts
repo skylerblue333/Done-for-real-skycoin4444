@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getCertificates
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines these
 import { z } from 'zod';

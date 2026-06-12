@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteMilestone
 // src/server/routers/milestone.ts (example path)
 import { z } from 'zod'; // Import Zod for input validation

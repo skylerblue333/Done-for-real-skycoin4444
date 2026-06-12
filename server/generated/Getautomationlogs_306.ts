@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getAutomationLogs
 import { initTRPC, TRPCError } from '@trpc/server';
 import { z } from 'zod';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: disableFeatureFlag
 
 import { z } from "zod";

@@ -134,10 +134,7 @@ const CryptoTwitterFeed: React.FC = () => {
 };
 
 // Sub-component for the header
-const Header: React.FC<any> void;
-  onRefresh: () => void;
-  isFetching: boolean;
-}> = ({ isDarkMode, setIsDarkMode, onRefresh, isFetching }) => (
+const Header: React.FC<any> = ({ isDarkMode, setIsDarkMode, onRefresh, isFetching }) => (
   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b">
     <div className="flex items-center gap-3">
       <div className="p-2 bg-primary/10 rounded-full">

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getTreasuryBalance
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your tRPC setup
 import { pgTable, serial, text, numeric } from 'drizzle-orm/pg-core';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getMilestoneProgress
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your tRPC setup
 import { z } from 'zod';

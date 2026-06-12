@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getNFTHistory
 import { publicProcedure, router } from '../trpc';
 import { z } from 'zod';

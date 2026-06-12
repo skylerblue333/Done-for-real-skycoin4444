@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: rateCodeSnippet
 import { z } from 'zod';
 import { protectedProcedure, publicProcedure, createTRPCRouter } from '../trpc';

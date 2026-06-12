@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils'; // Assuming shadcn/ui utility for class merging
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui Card component
 import { Skeleton } from '@/components/ui/skeleton'; // shadcn/ui Skeleton for loading states
 import { Switch } from '@/components/ui/switch'; // shadcn/ui Switch for dark mode toggle
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

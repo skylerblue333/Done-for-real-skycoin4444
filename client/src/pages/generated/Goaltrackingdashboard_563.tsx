@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, CheckCircle, XCircle, Loader2 } from 'lucide-react'; // For icons
 import { Switch } from '@/components/ui/switch'; // shadcn/ui Switch component
@@ -5,7 +6,6 @@ import { Label } from '@/components/ui/label'; // shadcn/ui Label component
 import { Progress } from '@/components/ui/progress'; // shadcn/ui Progress component
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui Card components
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

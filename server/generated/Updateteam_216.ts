@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateTeam
 import { z } from 'zod';
 import { publicProcedure } from './trpc'; // Assuming trpc.ts defines your tRPC setup

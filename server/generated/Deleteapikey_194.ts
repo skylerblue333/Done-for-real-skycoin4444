@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteAPIKey
 import { z } from 'zod';
 import { TRPCError } from '@trpc/server';

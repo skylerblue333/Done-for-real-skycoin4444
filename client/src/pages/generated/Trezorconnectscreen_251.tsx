@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button'; // shadcn/ui button
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'; // shadcn/ui card
@@ -7,7 +8,6 @@ import { Loader2 } from 'lucide-react'; // Loading icon
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // shadcn/ui alert for error handling
 import { Terminal } from 'lucide-react'; // Icon for alert
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

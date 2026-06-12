@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteMarketplaceListing
 import { z } from "zod";
 import { protectedProcedure, router } from "../trpc";

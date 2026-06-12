@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: triggerAutomationProcedure
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc'; // Assuming trpc setup

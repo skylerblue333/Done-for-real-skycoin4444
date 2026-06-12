@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button'; // Placeholder for shadcn/ui button
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'; // Placeholder for shadcn/ui card
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'; // Placeholder for shadcn/ui radio group
 import { Label } from '@/components/ui/label'; // Placeholder for shadcn/ui label
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

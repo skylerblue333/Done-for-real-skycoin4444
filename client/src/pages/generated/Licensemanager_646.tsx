@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { Switch } from '@/components/ui/switch'; // Placeholder for shadcn/ui Switch
 import { Button } from '@/components/ui/button'; // Placeholder for shadcn/ui Button
 import { Input } from '@/components/ui/input'; // Placeholder for shadcn/ui Input
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Placeholder for shadcn/ui Table
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

@@ -45,8 +45,7 @@ interface GenerateImageOptions {
   style: string;
 }
 
-const ImageGenerationForm: React.FC<any> void; onSubmit: (e: React.FormEvent) => void; isPending: boolean; error: string | null; }>
-  = ({ options, onOptionChange, onSubmit, isPending, error }) => (
+const ImageGenerationForm: React.FC<any> = ({ options, onOptionChange, onSubmit, isPending, error }) => (
     <form onSubmit={onSubmit} className="space-y-5">
       <div className="space-y-2">
         <Label htmlFor="prompt" className="text-sm font-medium">Prompt <span className="text-destructive">*</span></Label>

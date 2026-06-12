@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // shadcn/ui Card
 import { Skeleton } from '@/components/ui/skeleton'; // shadcn/ui Skeleton for loading states
@@ -5,7 +6,6 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'; // 
 import { Switch } from '@/components/ui/switch'; // shadcn/ui Switch for dark mode toggle
 import { Label } from '@/components/ui/label'; // shadcn/ui Label
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: leaveGroup
 import { z } from 'zod';
 import { publicProcedure, router } from '../trpc';

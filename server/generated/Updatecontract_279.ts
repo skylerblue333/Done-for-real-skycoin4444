@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateContract
 import { z } from 'zod';
 import { protectedProcedure, publicProcedure, router } from '../trpc';

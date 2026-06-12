@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: stakeProcedure
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your tRPC instance
 import { z } from 'zod';

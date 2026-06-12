@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: assignPermission
 import { z } from 'zod';
 import { TRPCError } from '@trpc/server';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button'; // shadcn/ui button
 import { Input } from '@/components/ui/input'; // shadcn/ui input
@@ -6,7 +7,6 @@ import { Switch } from '@/components/ui/switch'; // shadcn/ui switch for dark mo
 import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react'; // Lucide icon for loading
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

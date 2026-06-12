@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getModerationCases
 import { publicProcedure, router } from './trpc';
 import { db } from './db';

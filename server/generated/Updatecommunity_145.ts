@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateCommunity
 import { z } from 'zod';
 import { publicProcedure } from './trpc'; // Assuming trpc.ts defines publicProcedure

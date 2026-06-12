@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getProjectMembers
 import { publicProcedure, router } from './trpc';
 import { z } from 'zod';

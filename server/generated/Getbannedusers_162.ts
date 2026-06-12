@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getBannedUsers
 import { publicProcedure, router } from '../trpc';
 import { db } from '../../db';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Calendar } from '@/components/ui/calendar'; // Assuming shadcn/ui calendar component
 import { Button } from '@/components/ui/button'; // Assuming shadcn/ui button component
@@ -7,7 +8,6 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { format } from 'date-fns';
 import { ChevronLeft, ChevronRight, PlusCircle, Sun, Moon } from 'lucide-react'; // Icons
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });

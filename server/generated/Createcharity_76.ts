@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: createCharity
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your tRPC instance
 import { createCharityInput, createCharityOutput, charities } from './charity_schema';

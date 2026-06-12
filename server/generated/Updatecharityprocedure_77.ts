@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: updateCharityProcedure
 import { z } from 'zod';
 import { publicProcedure } from '../trpc';

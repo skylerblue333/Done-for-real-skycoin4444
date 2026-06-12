@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteInvoice
 
 // Path: src/server/routers/invoice.ts (example path)

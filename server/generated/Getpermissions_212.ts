@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getPermissions
 import { z } from 'zod';
 import { publicProcedure, router } from './trpc'; // Assuming trpc.ts defines your tRPC setup

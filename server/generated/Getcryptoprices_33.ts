@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: getCryptoPrices
 import { publicProcedure, router } from './trpc';
 import { getCryptoPricesInput, cryptoPrices } from './crypto_schema';

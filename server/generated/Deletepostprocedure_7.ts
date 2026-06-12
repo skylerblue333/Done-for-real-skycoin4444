@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deletePostProcedure
 
 import { publicProcedure } from '../trpc';

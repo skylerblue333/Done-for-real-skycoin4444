@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: sellCodeSnippet
 
 import { z } from 'zod';

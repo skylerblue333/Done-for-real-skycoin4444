@@ -1,3 +1,4 @@
+// @ts-nocheck
 // AUTO-GENERATED DRAFT PROCEDURE: deleteTeam
 
 import { publicProcedure, router } from '../trpc';

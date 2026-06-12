@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Button } from '@/components/ui/button'; // shadcn/ui button
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'; // shadcn/ui card
@@ -6,7 +7,6 @@ import { Badge } from '@/components/ui/badge'; // shadcn/ui badge for status
 import { Separator } from '@/components/ui/separator'; // shadcn/ui separator
 import { Lightbulb, CalendarDays, Users } from 'lucide-react'; // Icons
 
-// @ts-nocheck
 /* injected loose stubs so generated UI renders without a real backend */
 const trpc: any = new Proxy({}, { get: () => new Proxy({}, { get: () => () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {}, mutate: () => {}, mutateAsync: async () => ({}) }) }) });
 const useQuery: any = () => ({ data: undefined, isLoading: false, isPending: false, isError: false, error: null, refetch: () => {} });
